@@ -87,7 +87,7 @@ CREATE TABLE `client` (
   `NOM_CLIENT` text NOT NULL,
   `PRENOM_CLIENT` text NOT NULL,
   `ADRESSE_CLIENT` text NOT NULL,
-  `SIREN_CLIENT` decimal(8,0) NOT NULL
+  `SIREN_CLIENT` decimal(8,0) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -219,8 +219,8 @@ CREATE TABLE `onguents` (
   `QUANTITE_2_ONGUENT` decimal(8,0) NOT NULL,
   `INGREDIENT_3_ONGUENT` text NOT NULL,
   `QUANTITE_3_ONGUENT` decimal(8,0) NOT NULL,
-  `INGREDIENT_4_ONGUENT` text NOT NULL,
-  `QUANTITE_4_ONGUENT` decimal(8,0) NOT NULL
+  `INGREDIENT_4_ONGUENT` text DEFAULT NULL,
+  `QUANTITE_4_ONGUENT` decimal(8,0) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -244,8 +244,8 @@ CREATE TABLE `potions` (
   `QUANTITE_2_POTIONS` decimal(8,0) NOT NULL,
   `INGREDIENT_3_POTIONS` text NOT NULL,
   `QUANTITE_3_POTIONS` decimal(8,0) NOT NULL,
-  `INGREDIENT_4_POTIONS` text NOT NULL,
-  `QUANTITE_4_POTIONS` decimal(8,0) NOT NULL
+  `INGREDIENT_4_POTIONS` text DEFAULT NULL,
+  `QUANTITE_4_POTIONS` decimal(8,0) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -256,8 +256,8 @@ CREATE TABLE `potions` (
 
 CREATE TABLE `recipients` (
   `ID_RECIPIENTS` int(11) NOT NULL,
-  `ID_POTIONS` int(11) NOT NULL,
-  `ID_ONGUENT` int(11) NOT NULL,
+  `ID_POTIONS` int(11) DEFAULT NULL,
+  `ID_ONGUENT` int(11) DEFAULT NULL,
   `TYPE_RECIPIENTS` text NOT NULL,
   `PRIX_RECIPIENTS__` decimal(8,0) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
